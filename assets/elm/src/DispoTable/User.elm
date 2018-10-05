@@ -1,4 +1,4 @@
-module DispoTable.User exposing (User, WeekDisponibility)
+module DispoTable.User exposing (User, WeekDisponibility, updateWeek)
 
 
 type alias User =
@@ -17,3 +17,15 @@ type alias WeekDisponibility =
     , saturday : Bool
     , sunday : Bool
     }
+
+
+updateWeek : User -> User
+updateWeek user =
+    let
+        week =
+            user.weekDispo
+
+        newWeek =
+            { week | monday = True }
+    in
+    { user | weekDispo = newWeek }

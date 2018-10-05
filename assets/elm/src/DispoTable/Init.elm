@@ -1,0 +1,1 @@
+module DispoTable.Init exposing (..)
